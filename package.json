@@ -1,0 +1,34 @@
+{
+  "name": "gulp-markdown-github-style",
+  "version": "1.0.1",
+  "description": "Markdown to HTML with github style, inspired by gulp-markdown.",
+  "main": "index.js",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.8",
+    "marked": "^0.3.6",
+    "through2": "^2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/modood/gulp-markdown-github-style.git"
+  },
+  "keywords": [
+    "gulp",
+    "markdown",
+    "md",
+    "html",
+    "github"
+  ],
+  "author": "modood",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/modood/gulp-markdown-github-style/issues"
+  },
+  "homepage": "https://github.com/modood/gulp-markdown-github-style#readme"
+}
