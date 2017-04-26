@@ -28,7 +28,7 @@ module.exports = function (options) {
         return;
       }
 
-      $('article').append(data);
+      $('article').empty().append(data);
 
       file.contents = new Buffer($.html());
       file.path = gutil.replaceExtension(file.path, '.html');
