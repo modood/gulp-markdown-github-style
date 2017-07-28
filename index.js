@@ -28,6 +28,7 @@ module.exports = function (options) {
         return;
       }
 
+      $('article').empty();
       $('article').append(data);
 
       file.contents = new Buffer($.html());
