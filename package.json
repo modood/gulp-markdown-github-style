@@ -1,6 +1,6 @@
 {
   "name": "gulp-markdown-github-style",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Markdown to HTML with github style, inspired by gulp-markdown.",
   "main": "index.js",
   "dependencies": {

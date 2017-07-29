@@ -28,8 +28,12 @@ module.exports = function (options) {
         return;
       }
 
-      $('article').empty();
-      $('article').append(data);
+      $('article')
+        .empty()
+        .append(data)
+        .find('a[href*=".md"]').each(function () {
+			    $(this).attr('href', $(this).attr('href').replace('.md','.html'));
+        });
 
       file.contents = new Buffer($.html());
       file.path = gutil.replaceExtension(file.path, '.html');
