@@ -21,7 +21,7 @@ var gulp = require('gulp');
 var markdown = require('gulp-markdown-github-style');
 
 gulp.task('default', function () {
-	return gulp.src('README.md').pipe(markdown()).pipe(gulp.dest('dist'));
+    return gulp.src('README.md').pipe(markdown()).pipe(gulp.dest('dist'));
 });
 ```
 

@@ -32,7 +32,7 @@ module.exports = function (options) {
         .empty()
         .append(data)
         .find('a[href*=".md"]').each(function () {
-			    $(this).attr('href', $(this).attr('href').replace('.md','.html'));
+          $(this).attr('href', $(this).attr('href').replace('.md', '.html'));
         });
 
       file.contents = new Buffer($.html());
@@ -42,4 +42,3 @@ module.exports = function (options) {
     });
   });
 };
-
