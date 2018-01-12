@@ -38,3 +38,6 @@ jspm_packages
 
 # PHPStorm config dir
 .idea
+
+# Custom
+README.html
