@@ -5,7 +5,7 @@ var path = require('path');
 
 var gutil = require('gulp-util');
 var through = require('through2');
-var marked = require('marked');
+var markdownIt = require('markdown-it');
 var cheerio = require('cheerio');
 
 var $ = cheerio.load(fs.readFileSync(path.resolve(__dirname, 'template.html')), 'utf-8');
@@ -18,27 +18,22 @@ module.exports = function (options) {
     }
 
     if (file.isStream()) {
-      cb(new gutil.PluginError('gulp-markdown', 'Streaming not supported'));
+      cb(new gutil.PluginError('gulp-markdown-github-style', 'Streaming not supported'));
       return;
     }
 
-    marked(file.contents.toString(), options, function (err, data) {
-      if (err) {
-        cb(new gutil.PluginError('gulp-markdown', err, {fileName: file.path}));
-        return;
-      }
+    var md = markdownIt(options);
+    var data = md.render(file.contents.toString());
+    $('article')
+      .empty()
+      .append(data)
+      .find('a[href*=".md"]').each(function () {
+        $(this).attr('href', $(this).attr('href').replace('.md', '.html'));
+      });
 
-      $('article')
-        .empty()
-        .append(data)
-        .find('a[href*=".md"]').each(function () {
-          $(this).attr('href', $(this).attr('href').replace('.md', '.html'));
-        });
+    file.contents = new Buffer($.html());
+    file.path = gutil.replaceExtension(file.path, '.html');
 
-      file.contents = new Buffer($.html());
-      file.path = gutil.replaceExtension(file.path, '.html');
-
-      cb(null, file);
-    });
+    cb(null, file);
   });
 };

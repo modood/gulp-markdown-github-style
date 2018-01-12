@@ -13,7 +13,6 @@ Markdown to HTML with github style, inspired by gulp-markdown.
 $ npm install --save-dev gulp-markdown-github-style
 ```
 
-
 ## Usage
 
 ```js
@@ -29,9 +28,9 @@ gulp.task('default', function () {
 
 ### markdown(options)
 
-See the marked [options](https://github.com/chjj/marked#options-1).
+See the markdown-it [options](https://github.com/markdown-it/markdown-it#init-with-presets-and-options).
 
-Issues with the output should be reported on the marked [issue tracker](https://github.com/chjj/marked/issues).
+Issues with the output should be reported on the markdown-it [issue tracker](https://github.com/markdown-it/markdown-it/issues).
 
 ## Contributing
 
